@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.rcorp.kidselearning.com.rcorp.kidselearning.managers.ExercicesManager;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import com.rcorp.kidselearning.com.rcorp.kidselearning.managers.com.rcorp.kidselearning.managers.ExercicesManager;
 
 public class MainActivity extends Activity {
 
