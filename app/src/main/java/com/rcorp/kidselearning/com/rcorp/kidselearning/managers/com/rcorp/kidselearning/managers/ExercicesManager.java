@@ -1,6 +1,7 @@
 package com.rcorp.kidselearning.com.rcorp.kidselearning.managers.com.rcorp.kidselearning.managers;
 
 import android.content.res.Resources;
+import android.util.Log;
 
 import com.rcorp.kidselearning.R;
 
@@ -32,6 +33,7 @@ public class ExercicesManager {
     int current = 0;
     int NbQuestionExercice = 10;
     String m_CurrentQuestion = "5 + 5 =";
+    int score = 0;
 
     public ExercicesManager(ExerciceType p_Type, Resources p_Resources)
     {
@@ -69,9 +71,20 @@ public class ExercicesManager {
         return result;
     }
 
-    public void Submit()
+    public void Submit(String p_Result)
     {
+        try {
+            Log.d("result" , p_Result);
+            Log.d("Attempt", m_JsonExercice.getString(m_CurrentQuestion));
+            if (m_JsonExercice.getString(m_CurrentQuestion).equals(p_Result)) {
+                score++;
+            }
+        }catch (Exception e){}
+    }
 
+    public int getScore()
+    {
+        return score;
     }
 
     public void LoadJson(ExerciceType p_Type, Resources p_Resources)

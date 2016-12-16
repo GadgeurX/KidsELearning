@@ -1,6 +1,7 @@
 package com.rcorp.kidselearning;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +18,12 @@ public class ExerciceActivity extends Activity {
     Button Submit;
     ProgressBar m_Bar;
     ExercicesManager m_ExerciceManager;
+    ExerciceActivity m_Instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        m_Instance = this;
         setContentView(R.layout.activity_exercice);
         Question = (TextView) findViewById(R.id.QuestionTextView);
         Response = (EditText) findViewById(R.id.ResponsesEdit);
@@ -33,6 +36,13 @@ public class ExerciceActivity extends Activity {
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                m_ExerciceManager.Submit(Response.getText().toString());
+                if (m_ExerciceManager.getQuestionState() == 10)
+                {
+                    Intent intent = new Intent(m_Instance, ScoreActivity.class);
+                    intent.putExtra("SCORE", String.valueOf(m_ExerciceManager.getScore()));
+                    startActivity(intent);
+                }
                 Question.setText(m_ExerciceManager.GetNextQuestion());
                 Response.setText("");
                 m_Bar.setProgress(m_ExerciceManager.getQuestionState());
