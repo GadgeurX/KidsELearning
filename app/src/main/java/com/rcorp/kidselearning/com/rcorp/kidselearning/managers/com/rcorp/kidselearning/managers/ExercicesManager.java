@@ -30,6 +30,7 @@ public class ExercicesManager {
 
     JSONObject m_JsonExercice;
     int current = 0;
+    int NbQuestionExercice = 10;
     String m_CurrentQuestion = "5 + 5 =";
 
     public ExercicesManager(ExerciceType p_Type, Resources p_Resources)
@@ -49,7 +50,13 @@ public class ExercicesManager {
                 m_CurrentQuestion = key;
             i++;
         }
+        current++;
         return (m_CurrentQuestion);
+    }
+
+    public int getQuestionState()
+    {
+        return current;
     }
 
     public int countIterator(Iterator<String> p_Iterator)
