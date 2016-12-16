@@ -8,12 +8,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@mipmap/back"
     tools:context="com.rcorp.kidselearning.MainActivity">
 
     <ImageButton
-        android:src="@mipmap/Soustraction"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:src="@mipmap/soustraction"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:scaleType="fitXY"
         android:layout_marginBottom="25dp"
         android:id="@+id/SubBtn"
@@ -21,18 +22,18 @@
         android:layout_alignStart="@+id/AddBtn" />
 
     <ImageButton
-        android:src="@mipmap/Multi"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:src="@mipmap/multi"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:scaleType="fitXY"
         android:id="@+id/MultiBtn"
         android:layout_alignTop="@+id/AddBtn"
         android:layout_alignParentEnd="true" />
 
     <ImageButton
-        android:src="@mipmap/Addition"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:src="@mipmap/addition"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:scaleType="fitXY"
         android:layout_marginTop="40dp"
         android:id="@+id/AddBtn"
@@ -40,9 +41,9 @@
         android:layout_alignParentStart="true" />
 
     <ImageButton
-        android:src="@mipmap/Division"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:src="@mipmap/division"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:scaleType="fitXY"
         android:id="@+id/DivBtn"
         android:layout_alignTop="@+id/SubBtn"
